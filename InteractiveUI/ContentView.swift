@@ -11,10 +11,11 @@ struct ContentView: View {
     
     //this stores the input of the text field later in the code
     @State private var name: String = ""
+    @State private var textTitle = "What is your name?"
     
     var body: some View {
         VStack {
-            Text("What is your name?")
+            Text(textTitle)
                 .font(.title)
             
             //this text field!
@@ -24,8 +25,9 @@ struct ContentView: View {
                 .border(Color.purple, width: 1)
             
             Button("Submit Name!") {
-                
+                textTitle = "Welcome \(name)!"
             }
+            //button formatting
             .padding()
             .font(.title2)
             .buttonStyle(.borderedProminent)
